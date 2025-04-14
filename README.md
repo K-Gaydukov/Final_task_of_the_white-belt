@@ -30,15 +30,16 @@ Run the program:
 ./DateBase
 ```
 ### Example
-````input:
+input:
+````
 Add 2023-01-01 Meeting
 Add 2023-01-01 Lunch
 Add 1-01-01 Event1
 Find 2023-01-01
 Print
 ````
-
-```Output:
+Output:
+```
 Lunch
 Meeting
 0001-01-01 Event1
