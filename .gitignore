@@ -1,0 +1,4 @@
+DateBase
+*.exe
+*.o
+output.txt
