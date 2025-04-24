@@ -2,21 +2,25 @@
 CC = g++
 
 # Флаги компиляции
-CFLAGS = -std=c++17 -Wall -g
+CFLAGS = -std=c++17 -Wall -g -I src
 
-# Имя исполняемого файла
-TARGET = DateBase
+# Имена исполняемых файлов
+TARGET = build/DateBase
+TEST_TARGET = build/test_database
 
-# Цель по умолчанию: собрать программу
+# Цель по умолчанию: собрать основную программу
 all: $(TARGET)
 
-# Как собрать исполняемый файл
-$(TARGET): DateBase.cpp
-	$(CC) $(CFLAGS) DateBase.cpp -o $(TARGET)
+# Сборка основной программы
+$(TARGET): src/DateBase.cpp src/main.cpp src/DateBase.h src/CommonHeaders.h
+	$(CC) $(CFLAGS) src/DateBase.cpp src/main.cpp -o $(TARGET)
 
-# Очистка: удалить скомпилированные файлы
+# Сборка юнит-тестов
+$(TEST_TARGET): tests/unit/test_database.cpp src/DateBase.cpp src/DateBase.h src/CommonHeaders.h
+	$(CC) $(CFLAGS) tests/unit/test_database.cpp src/DateBase.cpp -lgtest -lgtest_main -pthread -o $(TEST_TARGET)
+
+# Очистка: удалить скомпилированные файлы и временные директории
 clean:
-	rm -f $(TARGET)
+	rm -rf build/* *.dSYM .pytest_cache
 
-# Указываем, что clean — не файл
 .PHONY: clean

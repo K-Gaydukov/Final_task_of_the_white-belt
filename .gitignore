@@ -1,4 +1,8 @@
-DateBase
+build/
+*.dSYM
+.pytest_cache/
 *.exe
 *.o
 output.txt
+.vscode/
+*.log
