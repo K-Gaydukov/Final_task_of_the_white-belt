@@ -31,25 +31,28 @@
     ```
 
 ## Структура проекта
-DateBase
+
+```
+Final_task_of_the_white-belt/
 ├── src/                    # Исходный код
 │   ├── CommonHeaders.h     # Общие заголовочные файлы
 │   ├── DateBase.h          # Объявления классов Date и Database
 │   ├── DateBase.cpp        # Реализация классов
 │   ├── main.cpp            # Главная программа
 ├── tests/                  # Тесты
-│   ├── unit/               # Юнит-тесты (C++)
+│   ├── unit/               # Юнит-тесты (Google test)
 │   │   ├── test_database.cpp
-│   ├── functional/         # Функциональные тесты (Python)
+│   ├── functional/         # Функциональные тесты (Pytest)
 │   │   ├── test_functional.py
-│   ├── stress/             # Стресс-тесты
+│   ├── stress/             # Стресс-тесты (Python)
 │   │   ├── generate_stress_test.py
 │   │   ├── stress_test.txt
 ├── build/                  # Скомпилированные файлы
 ├── docs/                   # Документация
 │   ├── README.md
-├── .gitignore
-├── Makefile
+├── .gitignore              # Исключения для Git
+├── Makefile                # Сборка проекта
+```
 
 
 ## Установка и запуск
