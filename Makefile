@@ -11,6 +11,10 @@ TEST_TARGET = build/test_database
 # Цель по умолчанию: собрать основную программу
 all: $(TARGET)
 
+# Создание директории build, если она не существует
+build:
+	mkdir -p build
+
 # Сборка основной программы
 $(TARGET): src/DateBase.cpp src/main.cpp src/DateBase.h src/CommonHeaders.h
 	$(CC) $(CFLAGS) src/DateBase.cpp src/main.cpp -o $(TARGET)
