@@ -90,7 +90,7 @@ Final_task_of_the_white-belt/
 #### 1 Юнит-тесты
 - Скомпилируйте и запустите:
     ````bash
-    make test_database
+    make build/test_database
     ./build/test_database
     ````
 #### 2 Функциональные тесты

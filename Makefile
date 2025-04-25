@@ -16,15 +16,15 @@ build:
 	mkdir -p build
 
 # Сборка основной программы
-$(TARGET): src/DateBase.cpp src/main.cpp src/DateBase.h src/CommonHeaders.h
+$(TARGET): src/DateBase.cpp src/main.cpp src/DateBase.h src/CommonHeaders.h | build
 	$(CC) $(CFLAGS) src/DateBase.cpp src/main.cpp -o $(TARGET)
 
 # Сборка юнит-тестов
-$(TEST_TARGET): tests/unit/test_database.cpp src/DateBase.cpp src/DateBase.h src/CommonHeaders.h
+$(TEST_TARGET): tests/unit/test_database.cpp src/DateBase.cpp src/DateBase.h src/CommonHeaders.h | build
 	$(CC) $(CFLAGS) tests/unit/test_database.cpp src/DateBase.cpp -lgtest -lgtest_main -pthread -o $(TEST_TARGET)
 
 # Очистка: удалить скомпилированные файлы и временные директории
 clean:
-	rm -rf build/* *.dSYM .pytest_cache
+	rm -rf build *.dSYM .pytest_cache
 
 .PHONY: clean
