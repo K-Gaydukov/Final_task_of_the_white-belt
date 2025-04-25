@@ -101,11 +101,11 @@ Final_task_of_the_white-belt/
     cd ../..
     ````
 #### 3 Cтресс-тест
-1. Сгенерируйте:
+- Сгенерируйте:
     ```bash
     python3 tests/stress/generate_stress_test.py > tests/stress/stress_test.txt
     ```
-2. Запустите программу с тестом:
+- Запустите программу с тестом:
     ```bash
     ./build/DateBase < tests/stress/stress_test.txt
     ```
